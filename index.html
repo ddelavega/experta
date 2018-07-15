@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Demo Experta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/r-2.2.2/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand px-3 mx-0" href="index.html">Kwyjibo</a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Edit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Subscriptions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tablas.html">Data export</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pending Deliveries
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">Students</a>
+              </li>
+              <li>
+                <a class="dropdown-item dropdown-toggle" href="#">TPS</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">TP1</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item dropdown-toggle" href="#">TP2</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Preentrega</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Reentrega</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="b-outline p-2">
+                2018 - 1C
+              </span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">2018 - 1C</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">2017 - 2C</a>
+              </li>
+              <li class="divider">
+                <hr>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-plus-circle"></i> New Course</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <form class="form-inline search-block">
+            <input class="form-control mr-sm-2" type="text" aria-label="Search">
+            <button class="btn btn-outline-success my-sm-0" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="text-secondary">
+                <img class="user_icon" src="images/ah.jpg" alt="AH" /> Alejandro</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-up" aria-labelledby="dropdown01">
+              <div class="container mw220 users">
+                <p>
+                  <a class="current_admin" href="#">
+                    <img src="images/ah.jpg" alt="AH" />
+                  </a>
+                  <span>Bienvenido: </span>
+                </p>
+                <p>
+                  <strong>Alejandro</strong>
+                  <br />
+                  <small>alejandro.lovaglio@experta.com.ar</small>
+                  <br />
+                  <small>
+                    <a href="#">editar perfil</a>
+                  </small>
+                </p>
+                <a class="btn btn-danger my-2 mw220" href="logout.php" onclick="return confirm('Realmente quiere abandonar la sesi&oacute;n?');">Cerrar Sesión</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar navbar-expand-lg">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column mt-2">
+            <li class="nav-item">
+              <a class="nav-link" href="tablas.html">
+                <span class="px-2">
+                  <i class="fas fa-users px-2"></i>
+                  Students
+                  <span class="badge badge-primary float-right">90</span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="px-2">
+                  <i class="fas fa-users px-2"></i>
+                  Unico Turno
+                  <span class="badge badge-primary float-right">90</span>
+                </span>
+              </a>
+              <hr />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="px-2">
+                  <i class="fas fa-plus px-2"></i>
+                  Nuevo Turno
+                </span>
+              </a>
+              <hr />
+            </li>
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 my-2 text-muted">
+            Trabajos - entregas
+          </h6>
+          <ul class="nav flex-column" id="nav-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="nav-tp1-tab" data-toggle="tab" href="#nav-tp1" role="tab" aria-controls="nav-tp1" aria-selected="true">
+                <span class="px-2">
+                  <i class="fas fa-inbox px-2"></i>
+                  TP1
+                  <span class="badge badge-primary float-right">444</span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-tp2pe-tab" data-toggle="tab" href="#nav-tp2pe" role="tab" aria-controls="nav-tp2pe" aria-selected="false">
+                <span class="px-2">
+                  <i class="fas fa-inbox px-2"></i>
+                  TP2 Preentrega
+                  <span class="badge badge-primary float-right">520</span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-tp2-tab" data-toggle="tab" href="#nav-tp2" role="tab" aria-controls="nav-tp2" aria-selected="false">
+                <span class="px-2">
+                  <i class="fas fa-inbox px-2"></i>
+                  TP2
+                  <span class="badge badge-primary float-right">590</span>
+                </span>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-tp2re-tab" data-toggle="tab" href="#nav-tp2re" role="tab" aria-controls="nav-tp2re" aria-selected="false">
+                <span class="px-2">
+                  <i class="fas fa-inbox px-2"></i>
+                  TP2 Reentrega
+                  <span class="badge badge-primary float-right">384</span>
+                </span>
+              </a>
+              <hr />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="px-2">
+                  <i class="fas fa-plus px-2"></i>
+                  Nueva practica
+                </span>
+              </a>
+              <hr />
+            </li>
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Menu
+          </h6>
+          <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">
+                <span class="px-2">
+                  <i class="far fa-chart-bar"></i>
+                  Dashboard
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sidebarPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
+                <span class="row px-2">
+                  <span class="col">
+                    <i class="fas fa-sliders-h"></i>
+                    Tasks
+                  </span>
+                  <i class="col-2 fas fa-caret-down"></i>
+                </span>
+              </a>
+              <div class="collapse " id="sidebarPages">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item pl-3">
+                    <a href="#!" class="nav-link ">
+                      Edit
+                    </a>
+                  </li>
+                  <li class="nav-item pl-3">
+                    <a href="#!" class="nav-link ">
+                      Subscription
+                    </a>
+                  </li>
+                  <li class="nav-item pl-3">
+                    <a href="#!" class="nav-link ">
+                      Pending Deliveries
+                    </a>
+                  </li>
+                  <li class="nav-item pl-3">
+                    <a href="tablas.html" class="nav-link ">
+                      Data Export
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <hr />
+            </li>
+            <li class="nav-item">
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 my-2 text-muted">
+                Settings
+              </h6>
+              <a class="nav-link" href="#sidebarAuth" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                <span class="row px-2">
+                  <span class="col">
+                    <i class="fas fa-user-cog mr-1"></i>
+                    Authentication
+                  </span>
+                  <i class="col-2 fas fa-caret-down"></i>
+                </span>
+              </a>
+              <div class="collapse mb-3" id="sidebarAuth">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link pl-3">
+                      Sign in
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link pl-3">
+                      Sign up
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link pl-3">
+                      Password reset
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link pl-3">
+                      Report Error
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+        </div>
+        <div class="container-fluid px-0">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-tp1" role="tabpanel" aria-labelledby="nav-tp1-tab">
+              <div class="row ">
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Card -->
+                  <div class="card shadow pb-2 mxh300">
+                      <!-- Title -->
+                      <h4 class="card-header-title mx-3 mt-3">
+                        TP1
+                      </h4>
+                      <hr class="mx-3" />
+                      <div class="row align-items-center">
+                        <div class="col my-3 ml-3">
+                          <!-- Heading -->
+                          <span class="h4 col-12 my-3 mx-2">
+                            444 / 454
+                          </span>
+                          <!-- Progress -->
+                          <div class="progress progress-sm m-4">
+                            <div class="progress-bar my3-" role="progressbar" style="width: 97%" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                        <div class="col-auto my-3 mr-4">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-users text-muted mb-0 mr-2"></span>
+                        </div>
+                        
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col my-3 ml-3">
+                          <!-- Heading -->
+                          <span class="h4 col-12 my-3 mx-2">
+                            262 / 444
+                          </span>
+                          <!-- Progress -->
+                          <div class="progress bg-danger progress-sm m-4">
+                            <div class="progress-bar bg-success my3-" role="progressbar" style="width: 59%" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>              
+                        </div>
+                        <div class="col-auto my-3 mr-4">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-check text-muted mb-0 mr-2"></span>
+                        </div>
+                        <div class="col-12 options my-4 mx-0">
+                          <hr />
+                          <!-- options -->
+                          <a href="#!" class="mx-2 text-center text-secondary">
+                            <i class="far fa-edit"></i>
+                            <span class="invisibles">Edit</span>
+                          </a> 
+                          <a href="#!" class="mx-2 text-center text-secondary">
+                            <i class="far fa-arrow-alt-circle-up"></i>
+                            <span class="invisibles">Upload</span>
+                          </a> 
+                          <a href="#!" class="mx-2 text-center text-secondary">
+                            <i class="far fa-eye"></i>
+                            <span class="invisibles">Deliveries</span>
+                          </a> <br class="invisibles" />
+                          <a href="#!" class="mx-2 text-center text-secondary">
+                            <i class="far fa-clipboard"></i>
+                            <span class="invisibles">Summaries</span>
+                          </a> 
+                          <a href="#!" class="mx-2 text-center text-secondary">
+                            <i class="fas fa-arrow-alt-circle-up"></i>
+                            <span class="invisibles">Upload Corrected</span>
+                          </a> 
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Devices -->
+                  <div class="card shadow pb-2 mxhrs">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      Delivery / Pending
+                    </h4>
+                    <hr class="mx-3" />
+                    <!-- Chart -->
+                    <div class="card-body">
+                      <!-- Chart -->
+                      <div class="chart chart-appended mxh300">
+                        <canvas id="devicesChart" class="chart-canvas chartjs-render-monitor" data-target="#devicesChartLegend" style="display: block; height: 231px; width: 303px;"
+                          width="782" height="602"></canvas>
+                      </div>
+                      <!-- Legend -->
+                      <div id="devicesChartLegend" class="chart-legend">
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #2C7BE5"></i>Delivery</span>
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #A6C5F7"></i>Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+              <div class="row px-2">
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            totalDeliveries
+                          </h6>
+                          <!-- Heading -->
+                          <span class="h2 mb-0">
+                            444
+                          </span>
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-user text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Success
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                262
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 59%" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-check text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Fail
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                182
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-exclamation-triangle text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Pending
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                10
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 far fa-file text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+              </div>
+            </div>
+            <!-- TAB 1-->
+            <!-- TAB 2-->
+            <div class="tab-pane fade" id="nav-tp2pe" role="tabpanel" aria-labelledby="nav-tp2pe-tab">
+              <div class="row">
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Card -->
+                  <div class="card shadow pb-2 mxh300">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      TP2 - Preentrega
+                    </h4>
+                    <hr class="mx-3" />
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          520 / 590
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress progress-sm m-4">
+                          <div class="progress-bar my3-" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-users text-muted mb-0 mr-2"></span>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          56 / 520
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress bg-danger progress-sm m-4">
+                          <div class="progress-bar bg-success my3-" role="progressbar" style="width: 10.7%" aria-valuenow="10.7" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-check text-muted mb-0 mr-2"></span>
+                      </div>
+                      <!-- / .row -->
+                      <div class="col-12 options my-4 mx-0">
+                        <hr />
+                        <!-- options -->
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-edit"></i>
+                          <span class="invisibles">Edit</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-eye"></i>
+                          <span class="invisibles">Deliveries</span>
+                        </a> <br class="invisibles" />
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-clipboard"></i>
+                          <span class="invisibles">Summaries</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="fas fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload Corrected</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Devices -->
+                  <div class="card shadow pb-2 mxhrs">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      Delivery / Pending
+                    </h4>
+                    <hr class="mx-3" />
+                    <!-- Chart -->
+                    <div class="card-body">
+                      <!-- Chart -->
+                      <div class="chart chart-appended mxh300">
+                        <canvas id="devicesChart2" class="chart-canvas chartjs-render-monitor" data-target="#devicesChartLegend2" style="display: block; height: 231px; width: 303px;"
+                          width="782" height="602"></canvas>
+                      </div>
+                      <!-- Legend -->
+                      <div id="devicesChartLegend2" class="chart-legend">
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #2C7BE5"></i>Delivery</span>
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #A6C5F7"></i>Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+              <div class="row px-2">
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            totalDeliveries
+                          </h6>
+                          <!-- Heading -->
+                          <span class="h2 mb-0">
+                            520
+                          </span>
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-user text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Success
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                56
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 10.7%" aria-valuenow="10.7" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-check text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Fail
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                464
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 89.2%" aria-valuenow="89.2" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-exclamation-triangle text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Pending
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                70
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 11.8%" aria-valuenow="11.8" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 far fa-file text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+              </div>
+            </div>
+            <!-- TAB 2 END-->
+            <!-- TAB 3-->
+            <div class="tab-pane fade" id="nav-tp2" role="tabpanel" aria-labelledby="nav-tp2-tab">
+              <div class="row">
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Card -->
+                  <div class="card shadow pb-2 mxh300">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      TP2
+                    </h4>
+                    <hr class="mx-3" />
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          590 / 644
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress progress-sm m-4">
+                          <div class="progress-bar my3-" role="progressbar" style="width: 91.6%" aria-valuenow="91.6" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-users text-muted mb-0 mr-2"></span>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          206 / 590
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress bg-danger progress-sm m-4">
+                          <div class="progress-bar bg-success my3-" role="progressbar" style="width: 34.9%" aria-valuenow="34.9" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-check text-muted mb-0 mr-2"></span>
+                      </div>
+                      <!-- / .row -->
+                      <div class="col-12 options my-4 mx-0">
+                        <hr />
+                        <!-- options -->
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-edit"></i>
+                          <span class="invisibles">Edit</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-eye"></i>
+                          <span class="invisibles">Deliveries</span>
+                        </a> <br class="invisibles" />
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-clipboard"></i>
+                          <span class="invisibles">Summaries</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="fas fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload Corrected</span>
+                        </a>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Devices -->
+                  <div class="card shadow pb-2 mxhrs">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      Delivery / Pending
+                    </h4>
+                    <hr class="mx-3" />
+                    <!-- Chart -->
+                    <div class="card-body">
+                      <!-- Chart -->
+                      <div class="chart chart-appended mxh300">
+                        <canvas id="devicesChart3" class="chart-canvas chartjs-render-monitor" data-target="#devicesChartLegend3" style="display: block; height: 231px; width: 303px;"
+                          width="782" height="602"></canvas>
+                      </div>
+                      <!-- Legend -->
+                      <div id="devicesChartLegend3" class="chart-legend">
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #2C7BE5"></i>Delivery</span>
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #A6C5F7"></i>Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+              <div class="row px-2">
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            totalDeliveries
+                          </h6>
+                          <!-- Heading -->
+                          <span class="h2 mb-0">
+                            590
+                          </span>
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-user text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Success
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                206
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 34.9%" aria-valuenow="34.9" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-check text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Fail
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                384
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 65.1%" aria-valuenow="65.1" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-exclamation-triangle text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Pending
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                54
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 11.8%" aria-valuenow="11.8" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 far fa-file text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+              </div>
+            </div>
+            <!-- TAB 3 END-->
+            <!-- TAB 4-->
+            <div class="tab-pane fade" id="nav-tp2re" role="tabpanel" aria-labelledby="nav-tp2re-tab">
+              <div class="row">
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Card -->
+                  <div class="card shadow pb-2 mxh300">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      TP2 - Reentrega
+                    </h4>
+                    <hr class="mx-3" />
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          384 / 463
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress progress-sm m-4">
+                          <div class="progress-bar my3-" role="progressbar" style="width: 82.9%" aria-valuenow="82.9" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-users text-muted mb-0 mr-2"></span>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col my-3 ml-3">
+                        <!-- Heading -->
+                        <span class="h4 col-12 my-3 mx-2">
+                          51 / 384
+                        </span>
+                        <!-- Progress -->
+                        <div class="progress bg-danger progress-sm m-4">
+                          <div class="progress-bar bg-success my3-" role="progressbar" style="width: 13.3%" aria-valuenow="13.3" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto my-3 mr-4">
+                        <!-- Icon -->
+                        <span class="h3 fas fa-check text-muted mb-0 mr-2"></span>
+                      </div>
+                      <!-- / .row -->
+                      <div class="col-12 options my-4 mx-0">
+                        <hr />
+                        <!-- options -->
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-edit"></i>
+                          <span class="invisibles">Edit</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-eye"></i>
+                          <span class="invisibles">Deliveries</span>
+                        </a> <br class="invisibles" />
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="far fa-clipboard"></i>
+                          <span class="invisibles">Summaries</span>
+                        </a>
+                        <a href="#!" class="mx-2 text-center text-secondary">
+                          <i class="fas fa-arrow-alt-circle-up"></i>
+                          <span class="invisibles">Upload Corrected</span>
+                        </a>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl my-2">
+                  <!-- Devices -->
+                  <div class="card shadow pb-2 mxhrs">
+                    <!-- Title -->
+                    <h4 class="card-header-title mx-3 mt-3">
+                      Delivery / Pending
+                    </h4>
+                    <hr class="mx-3" />
+                    <!-- Chart -->
+                    <div class="card-body">
+                      <!-- Chart -->
+                      <div class="chart chart-appended mxh300">
+                        <canvas id="devicesChart4" class="chart-canvas chartjs-render-monitor" data-target="#devicesChartLegend4" style="display: block; height: 231px; width: 303px;"
+                          width="782" height="602"></canvas>
+                      </div>
+                      <!-- Legend -->
+                      <div id="devicesChartLegend4" class="chart-legend">
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #2C7BE5"></i>Delivery</span>
+                        <span class="chart-legend-item">
+                          <i class="chart-legend-indicator" style="background-color: #A6C5F7"></i>Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+              <div class="row px-2">
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            totalDeliveries
+                          </h6>
+                          <!-- Heading -->
+                          <span class="h2 mb-0">
+                            384
+                          </span>
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h3 fas fa-user text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Success
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                51
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 13.3%" aria-valuenow="13.3" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-check text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Fail
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                333
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 86.7%" aria-valuenow="86.7" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 fas fa-exclamation-triangle text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl px-1 my-2">
+                  <!-- Card -->
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <!-- Title -->
+                          <h6 class="card-title text-uppercase text-muted mb-2">
+                            Pending
+                          </h6>
+                          <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                              <!-- Heading -->
+                              <span class="h2 mr-2 mb-0">
+                                79
+                              </span>
+                            </div>
+                            <div class="col">
+                              <!-- Progress -->
+                              <div class="progress progress-sm">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- / .row -->
+                        </div>
+                        <div class="col-auto">
+                          <!-- Icon -->
+                          <span class="h2 far fa-file text-muted mb-0"></span>
+                        </div>
+                      </div>
+                      <!-- / .row -->
+                    </div>
+                  </div>
+                </div>
+                <!-- / .row -->
+              </div>
+            </div>
+            <!-- TAB 4 END-->
+          </div>
+        </div>
+        <div class="container-fluid px-0 mt-4">
+          <p class="muted credit">
+            Kwyjibo
+            <i>beta</i> - © FIUBA 2017
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <!-- Librerias -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="js/multidropdown.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- Graphs -->
+  <script type="text/javascript" src="js/chartx.js"></script>
+  <script type="text/javascript" src="js/charty.js"></script>
+  <script type="text/javascript" src="js/chartz.js"></script>
+  </body>
+</html>
