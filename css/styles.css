@@ -24,8 +24,14 @@ a {
     border: 0;
     outline: 0;
     position: absolute;
-    right: 16px;
-    color: #666; }
+    left: 190px;
+    text-align: right;
+    color: #666;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0) !important;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0) !important; }
+  .search-block:hover button {
+    color: #95aac9; }
   .search-block input {
     line-height: 40px;
     height: 40px;
@@ -203,6 +209,7 @@ button.navbar-toggler {
 
 @media all and (max-width: 540px) {
   .search-block {
+    overflow: hidden;
     margin: 10px auto; }
   .card .invisibles {
     display: none; }
@@ -211,6 +218,17 @@ button.navbar-toggler {
     font-size: 1rem; }
   .card .h3.text-muted {
     font-size: 1.5rem; } }
+
+@media all and (max-width: 970px) {
+  header .fixed-top {
+    max-height: calc(100vh - 10px);
+    overflow: hidden;
+    overflow-y: scroll;
+    right: -22px; }
+    header .fixed-top .dropdown {
+      margin-bottom: 20px; }
+  header .user {
+    max-width: 320px !important; } }
 
 .border-top {
   border-top: 1px solid #e5e5e5; }
